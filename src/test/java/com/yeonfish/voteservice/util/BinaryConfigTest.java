@@ -35,7 +35,7 @@ public class BinaryConfigTest {
         log.info(binaryConfig.getBinary());
         binaryConfig.set(12, true);
         log.info(binaryConfig.getBinary());
-//        binaryConfig.set(11, true);
+        binaryConfig.set(11, true);
 
         log.info(binaryConfig.get().toString());
         log.info(binaryConfig.getBinary());
