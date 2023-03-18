@@ -3,10 +3,16 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- 연결할 인터페이스 경로를 namespace에 작성 -->
 <mapper namespace="com.yeonfish.voteservice.mappers.AccountMapper">
-    <select id="register" parameterType="UserVO" resultType="string">
-        insert into VoteService(`UUID`, `Name`, `NickName`, `Id`, `Password`, `Phone`, `Status`) values (#{UUID}, #{Name}, #{NickName}, #{Id}, #{Password}, #{Phone}, ${Status})
-    </select>
+    <insert id="add" parameterType="UserVO">
+        insert into VoteService_User(`UUID`, `Name`, `NickName`, `Id`, `Password`, `Phone`, `Status`) values (#{UUID}, #{Name}, #{NickName}, #{Id}, #{Password}, #{Phone}, ${Status})
+    </insert>
     <update id="update" parameterType="UserVO">
         update VoteService_User set `Name`=#{Name}, `NickName`=#{NickName}, `Id`=#{Id}, `Password`=#{Password}, `Phone`=#{Phone}, `Status`=${Status} where `UUID`=#{UUID}
     </update>
+    <select id="get" parameterType="UserVO" resultType="UserVO">
+        select * from VoteService_User where `Id`=#{Id} and `Password`=#{Password}
+    </select>
+    <delete id="delete" parameterType="UserVO">
+        delete from VoteService_User where `UUID`=#{UUID}
+    </delete>
 </mapper>

@@ -100,6 +100,12 @@
             <artifactId>web-push</artifactId>
             <version>5.1.1</version>
         </dependency>
+        <!--    JUnit Test    -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.9.2</version>
+        </dependency>
     </dependencies>
 
     <build>

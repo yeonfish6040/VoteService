@@ -8,8 +8,9 @@ import org.springframework.stereotype.Component;
 public class UserVO {
     private String UUID;
     private String Name;
+    private String NickName;
     private String Id;
     private String Password;
     private String Phone;
-    private boolean Is_Certified;
+    private int Status;
 }
